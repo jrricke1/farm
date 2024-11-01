@@ -1,0 +1,235 @@
+
+    /* -------------------- IMPORTED FONTS -------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+    /*-------------------- CSS RESET ---------------------------------------------------*/
+  
+    /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+
+    /* -------------------- ROOT VARIABLES --------------------------------------- */
+    :root{
+        /*-----FONTS-----*/
+        --font-heading: Irish grover, serif;
+        --font-content: Habibi, sans-serif;
+        /*-----COLORS-----*/
+        --green: #06A816;
+        --orange: #E75D02;
+        --black: #000000;
+        --white: #ffffff;
+    }
+    /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+    body {
+        background-color: var(--white);
+    }
+        /*display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 10px;
+    }
+
+    body > *{
+        grid-column: 1 / span 12;
+    }*/
+
+    header {
+        text-align: center;
+        padding: 10px 0px;
+    }
+    header p{
+        line-height: normal;
+        font-style: italic;
+        margin: 0;
+    }
+
+    header, .hours, .contact {
+        background-color: var(--green);
+        color: var(--white);
+    }
+
+
+    h1, h2, h3 {
+        font-family: var(--font-heading);
+    }
+    h1 {
+        font-size: 2.5em;
+        text-shadow: 2px 2px 3px var(--black);
+        margin-bottom: 10px
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    nav h2 {
+        display: none;
+    }
+
+    nav a {
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        background-color: var(--orange);
+        color: var(--white);
+        list-style: none;
+        font-family: var(--font-content);
+        padding: 8px 75px;
+        margin: 10px 0px;
+        border-radius: 5px;
+    }
+    nav ul li:last-child a {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        padding: 20px 15px;
+        border: 2px solid var(--white);
+        margin: 0 2px 20px 0;
+
+    }
+
+    li {
+        list-style: none;
+        font-family: var(--font-content);
+    }
+
+    p {
+        font-family: var(--font-content);
+        margin: 10px;
+        line-height: 1.5;
+    }
+
+   footer {
+    font-family:var(--font-content);
+    text-align: center;
+   }
+
+    figure {
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+       }
+    img {
+        display: block;
+        margin: 10px 0 20px 0;
+    }
+
+    figcaption {
+        position:absolute;
+        text-align: center;
+        color: var(--white);
+        background-color: var(--black);
+        padding: 10px 25px;
+        opacity: 60%;
+        font-family: var(--font-content);
+        font-size: 1.25em;
+    }
+
+    #fruits h2 {
+        margin-left: 10px;
+    }
+
+    #vegetables h2 {
+        margin-left: 10px;
+    }
+
+    .sale-fruits h3 {
+        text-align: center;
+        margin: 20px 0 0 0;
+    }
+
+    .sale-vegetables h3 {
+        text-align: center;
+        margin: 20px 0 0 0;
+    }
+
+    .contact h2{
+        padding: 30px 0 15px 0;
+    }
+    address {
+        line-height: 1.5;
+        padding-bottom: 20px;
+    }
+
+    .hours h2{
+        padding-bottom: 20px;
+    }
+
+    dl{
+        line-height: 1.5;
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        justify-content: center;
+    }
+
+    dt{
+        grid-column-start: 1;
+    }
+
+    dd{
+        grid-column-start: 2;
+    }
+
+    small{
+        color: var(--green);
+        font-family: var(--font-content);
+        line-height: 1.5;
+    }
+   
+
+    /*-------------------- MEDIA QUERY (medium) --------------------------------*/
+    /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+    /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
