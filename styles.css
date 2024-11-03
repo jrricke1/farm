@@ -66,15 +66,10 @@
     /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
     body {
         background-color: var(--white);
-    }
-        /*display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        display: grid;
+        grid-template-columns: 1fr;
         grid-gap: 10px;
     }
-
-    body > *{
-        grid-column: 1 / span 12;
-    }*/
 
     header {
         text-align: center;
@@ -111,9 +106,17 @@
         display: flex;
         justify-content: space-around;
         padding: 10px;
+        
     }
     nav h2 {
         display: none;
+    }
+
+    nav li {
+        list-style: none;
+        font-family: var(--font-content);
+        width: 275px;
+        margin: 10px;
     }
 
     nav a {
@@ -136,12 +139,6 @@
         padding: 20px 15px;
         border: 2px solid var(--white);
         margin: 0 2px 20px 0;
-
-    }
-
-    li {
-        list-style: none;
-        font-family: var(--font-content);
     }
 
     p {
@@ -193,6 +190,7 @@
     .sale-vegetables h3 {
         text-align: center;
         margin: 20px 0 0 0;
+        padding: 15px 0;
     }
 
     .contact h2{
@@ -207,20 +205,9 @@
         padding-bottom: 20px;
     }
 
-    dl{
-        line-height: 1.5;
-        padding-bottom: 20px;
-        display: grid;
-        grid-template-columns: repeat(2, 150px);
-        justify-content: center;
-    }
 
-    dt{
-        grid-column-start: 1;
-    }
-
-    dd{
-        grid-column-start: 2;
+    div dt, div dd { 
+        display: inline;
     }
 
     small{
@@ -231,5 +218,107 @@
    
 
     /*-------------------- MEDIA QUERY (medium) --------------------------------*/
+    @media screen and (min-width:834px) {
+        header {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        header h1 {
+            grid-column: 1 / span 1;
+            justify-self: start;
+            padding-left: 20px;
+        }
+
+        header p {
+            grid-column: -1 / span 1;
+            align-self: center;
+            padding-right: 40px;
+        }
+
+        nav {
+            display: inline;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+        }
+            
+
+        nav li {
+            width: 275px;
+        }
+        
+        .fruit-gallery , .vegetable-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        footer{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contact h2, .contact address{
+            grid-column-start: 1;
+        }
+
+        .hours h2, .hours dl {
+            grid-column-start: 2;
+            align-self: center;
+        }
+      
+       small{
+        grid-column: 1 / 3;
+        }
+        
+    }
     /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+    @media screen and (min-width: 1280px){
+        header, nav{
+            display: inline-block;
+        }
+
+        .top {
+            display:flex;
+            justify-content: space-around;
+            align-items: center; 
+            background-color: var(--green);   
+        }
+
+        header h1{
+            text-align: left;
+            padding: 0;
+        }
+
+        nav a{
+            border: 2px solid var(--white);
+        }
+
+        .fruit-gallery , .vegetable-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        footer .contact, footer .hours{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            line-height: 1.5;
+            }
+
+        small {
+            display: block;
+        }
+    }
     /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+    @media screen and (min-width: 1440px) {
+        .fruit-gallery , .vegetable-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+    }
